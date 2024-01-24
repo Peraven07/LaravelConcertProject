@@ -56,8 +56,6 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-
-
 // Common Resource Routes:
 // index - Show all listings
 // show - Show single listing
@@ -65,4 +63,4 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 // store - Store new listing
 // edit - Show form to edit listing
 // update - Update listing
-// destroy - Delete listing  
+// destroy - Delete listing

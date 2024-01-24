@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,11 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// Ticket
+Route::get('/tickets', [TicketController::class, 'index'])->name('tickets.index');
+Route::get('/tickets/create', [TicketController::class, 'create'])->name('tickets.create');
+Route::post('/tickets/store', [TicketController::class, 'store'])->name('tickets.store');
 
 // Common Resource Routes:
 // index - Show all listings

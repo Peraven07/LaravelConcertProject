@@ -48,6 +48,9 @@
                         </button>
                     </form>
                 </li>
+                <li>
+                    <a href="/tickets" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> Ticket Book</a>
+                </li>
                 @else
                 <li>
                     <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>

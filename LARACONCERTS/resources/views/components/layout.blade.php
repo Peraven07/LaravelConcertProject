@@ -41,6 +41,10 @@
                     Manage Concerts</a>
                 </li>
                 <li>
+                    <a href="/attendants/viewAttendant" class="hover:text-laravel"><i class="fas fa-lock-open"></i>
+                    View Attendants</a>
+                </li>
+                <li>
                     <form class= "inline" method="POST" action="/logout">
                         @csrf
                         <button type= "submit">
@@ -49,7 +53,7 @@
                     </form>
                 </li>
                 <li>
-                    <a href="/tickets" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i> Ticket Book</a>
+                    <a href="/attendants" class="hover:text-laravel"><i class="fas fa-bullhorn"></i> Join Event</a>
                 </li>
                 @else
                 <li>

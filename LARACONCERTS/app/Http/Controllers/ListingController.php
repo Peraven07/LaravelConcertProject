@@ -67,7 +67,7 @@ class ListingController extends Controller
         if($listing->user_id != auth()->id()){
             abort(403, 'Unauthorized Action.');
         }
-        
+
         $formFields = $request->validate([
             'title' => ['required',],
             'artist' => 'required',
@@ -100,7 +100,7 @@ class ListingController extends Controller
         if($listing->user_id != auth()->id()){
             abort(403, 'Unauthorized Action.');
         }
-        
+
         $listing->delete();
         return redirect('/')->with('message', 'Concert deleted successfully!');
     }

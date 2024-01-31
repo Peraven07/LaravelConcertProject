@@ -13,11 +13,8 @@
             @csrf
             <div class="mb-6">
                 <label for="concert_name" class="inline-block font-bold text-lg mb-2">Concert Name</label>
-                <select name="concert_name" class="border border-gray-200 rounded p-2 w-full">
-                    <option value="" disabled selected>Select a concert name</option>
-
-                    <!-- Add more options as needed -->
-                </select>
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="concert_name"
+                    value="{{ old('concert_name') }}" placeholder="Concert Name" />
                 @error('concert_name')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -40,7 +37,7 @@
             </div>
             <div class="mb-6">
                 <label for="contact_no" class="inline-block font-bold text-lg mb-2">Contact Number</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="contact_no"
+                <input type="tel" class="border border-gray-200 rounded p-2 w-full" name="contact_no"
                     value="{{ old('contact_no') }}" placeholder="Enter contact number" />
                 @error('contact_no')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>

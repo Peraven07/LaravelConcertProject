@@ -15,7 +15,7 @@ class Attendant extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'concert_name', 'full_name', 'email', 'contact_no', 'address',
+        'concert_name', 'full_name', 'email', 'contact_no', 'address',
     ];
 
     /**

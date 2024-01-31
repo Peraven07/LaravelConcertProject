@@ -57,11 +57,26 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-// Ticket
+// ***************************************************************************************************
 
+// Attendant Registration
 Route::get('/attendants', [AttendantController::class, 'index'])->name('attendants.index');
-Route::get('/attendants/create', [AttendantController::class, 'create'])->name('attendants.create');
+
+// Create Attendant Registration Form
+Route::get('/attendants/create', [AttendantController::class, 'create'])->middleware('auth');
+
+// Edit attendant
+Route::get('/attendants/{attendant}/editAttendant', [AttendantController::class, 'edit'])->middleware('auth');
+
+// Update Attendant
+Route::put('/attendants/{attendant}', [AttendantController::class,'update']);
+
+// View the attendant list
+Route::get('/attendants/viewAttendant', [AttendantController::class, 'manage'])->name('attendants.viewAttendant');
+
+// Store the attendant
 Route::post('/attendants/store', [AttendantController::class, 'store'])->name('attendants.store');
+
 
 // Common Resource Routes:
 // index - Show all listings

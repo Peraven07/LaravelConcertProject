@@ -10,8 +10,8 @@
     <form method= "POST" action="/listings" enctype= "multipart/form-data">
         @csrf
         <div class="mb-6">
-            <label 
-                for="title" 
+            <label
+                for="title"
                 class="inline-block font-bold text-lg mb-2">Concert Title</label>
             <input
                 type="text"
@@ -61,7 +61,7 @@
                 for="date"
                 class="inline-block font-bold text-lg mb-2">Concert Date</label>
             <input
-                type="text"
+                type="date"
                 class="border border-gray-200 rounded p-2 w-full"
                 name="date"
                 value="{{old('date')}}"
@@ -77,7 +77,7 @@
                 for="time"
                 class="inline-block font-bold text-lg mb-2">Concert Time</label>
             <input
-                type="text"
+                type="time"
                 class="border border-gray-200 rounded p-2 w-full"
                 name="time"
                 value="{{old('time')}}"
@@ -105,8 +105,8 @@
         </div>
 
         <div class="mb-6">
-            <label 
-                for="organizer" 
+            <label
+                for="organizer"
                 class="inline-block font-bold text-lg mb-2">Concert Organizer</label>
             <input
                 type="text"
@@ -121,11 +121,11 @@
         </div>
 
         <div class="mb-6">
-            <label 
-                for="email" 
+            <label
+                for="email"
                 class="inline-block font-bold text-lg mb-2">Contact Email</label>
             <input
-                type="text"
+                type="email"
                 class="border border-gray-200 rounded p-2 w-full"
                 name="email"
                 value="{{old('email')}}"
@@ -136,11 +136,11 @@
             @enderror
         </div>
 
-        
+
 
         <div class="mb-6">
-            <label 
-                for="picture" 
+            <label
+                for="picture"
                 class="inline-block font-bold text-lg mb-2">Concert Photo</label>
             <input
                 type="file"

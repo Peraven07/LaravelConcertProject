@@ -6,13 +6,13 @@
             </h2>
             <p class="mb-4">Edit for {{$listing->title}}</p>
         </header>
-    
+
         <form method= "POST" action="/listings/{{$listing->id}}" enctype= "multipart/form-data">
             @csrf
             @method('PUT')
             <div class="mb-6">
-                <label 
-                    for="title" 
+                <label
+                    for="title"
                     class="inline-block font-bold text-lg mb-2">Concert Title</label>
                 <input
                     type="text"
@@ -25,7 +25,7 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label
                     for="artist"
@@ -41,7 +41,7 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label for="tags" class="inline-block font-bold text-lg mb-2"> Tags (Comma Separated)
                 </label>
@@ -56,7 +56,7 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label
                     for="date"
@@ -72,7 +72,7 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label
                     for="time"
@@ -88,7 +88,7 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label
                     for="location"
@@ -104,10 +104,10 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
-                <label 
-                    for="organizer" 
+                <label
+                    for="organizer"
                     class="inline-block font-bold text-lg mb-2">Concert Organizer</label>
                 <input
                     type="text"
@@ -120,10 +120,10 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
-                <label 
-                    for="email" 
+                <label
+                    for="email"
                     class="inline-block font-bold text-lg mb-2">Contact Email</label>
                 <input
                     type="text"
@@ -136,21 +136,21 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
-            
-    
+
+
+
             <div class="mb-6">
-                <label 
-                    for="picture" 
+                <label
+                    for="picture"
                     class="inline-block font-bold text-lg mb-2">Concert Photo</label>
                 <input
                     type="file"
                     class="border border-gray-200 rounded p-2 w-full"
-                    name="picture" 
+                    name="picture"
                 />
                 <img
                     class="w-64"
-                    src="{{$listing->logo ? 
+                    src="{{$listing->logo ?
                     asset('storage/' . $listing->logo) : asset('/images/Full Logo.png')}}"
                     alt= ""
                 />
@@ -158,7 +158,7 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <label
                     for="description"
@@ -175,12 +175,12 @@
                     <p class = "text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
             </div>
-    
+
             <div class="mb-6">
                 <button
                     class="bg-laravel font-bold text-white rounded py-2 px-4 hover:bg-black">Save Changes
                 </button>
-                <a href="/" class="text-black ml-4"> Back </a>
+                <a href="/listings/manage" class="text-black ml-4"> Back </a>
             </div>
         </form>
     </x-card>

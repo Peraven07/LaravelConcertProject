@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('attendants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('title')->constrained('listings')->onDelete('cascade');
             $table->string('concert_name');
             $table->string('full_name');
             $table->string('email')->unique(); // Assuming email should be unique
@@ -22,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Define composite foreign key constraint
-            $table->foreign(['listing_id', 'concert_name'])->references(['id', 'title'])->on('listings')->onDelete('cascade');
+            // $table->foreign(['listing_id', 'concert_name'])->references(['id', 'title'])->on('listings')->onDelete('cascade');
         });
     }
 
